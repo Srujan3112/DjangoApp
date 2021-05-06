@@ -1,0 +1,18 @@
+<a href="{%url 'products' %}">Go back</a>
+<form method="GET">
+<input type="text" name="search-area" value="{{search_input}}">
+<input type="submit" value="search"></form>
+{% for product in products %}
+<hr>
+<h1>Task :{{product.title}}</h1> 
+<h1>Description :{{product.description}}</h1> 
+<img src="{{product.image.url}}" alt="Sorry there's a problem with your network">
+<h1>price :{{product.price}}</h1>
+<h1>category: {{product.category}}</h1>
+<h1>User: {{product.user}}</h1>
+<h1>Created :{{product.created}}</h1>
+<input type="submit" value="Add to cart">
+<td><a href="{%url 'product_update' product.id%}">Edit</a></td>
+ <td><a href="{%url 'product_delete' product.id%}">Delete</a></td>
+ <hr>
+{% endfor %}

@@ -1,0 +1,45 @@
+{% load isordered %}
+{% if request.user.is_authenticated %}
+<p>{{request.user}}</p>
+<a href="{%url 'logout'%}">Logout</a>
+{% else %}
+<a href="{%url 'login' %}">Login</a>
+{% endif %}
+<a href="{%url 'cart_items' request.user.id %}">Cart</a>
+<a href="{% url 'all_user_products' user.id %}"> My items</a>
+<h1>My Products List</h1>
+<a href="{% url 'product_create'%}"> Add product</a>
+<form method="GET">
+<input type="text" name="search-area" value="{{search_input}}">
+<input type="submit" value="search"></form>
+<table>
+
+{% for product in products  %}
+
+<tr>
+      <th>Item</th>
+      <th></th>
+</tr>
+<tr>
+      <td>{{product.title}}</td>
+      <td>{{product.description}}</td>
+      {% is_ordered request product as boolean %}
+      {% if not boolean %}
+            <td><form action="{%url 'create_item' product.id %}" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="Add to cart">
+            </form></td>
+      {% else %} 
+            <td><form action="{%url 'update_item' product.id %}">
+            {% csrf_token %}
+            <input type="submit" value="Go to cart">
+            </form></td>
+      {% endif %}
+     <td><a href="{%url 'product' product.id%}">View</a></td>
+     {% comment %} <td><a href="{%url 'product_update' product.id%}">Edit</a></td> 
+     <td><a href="{%url 'product_delete' product.id%}">Delete</a></td>  {% endcomment %}
+</tr>
+{%empty%}
+<h3> No Items are present</h3>
+{% endfor %}
+</table>

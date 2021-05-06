@@ -1,0 +1,12 @@
+<form action="" method="POST">
+				{% csrf_token %}
+				<div>
+    {{ user}} <!-- This prints the value -->
+    {{ title}}
+	 {{form.price.value}}
+	 <img src="{{image}}">
+	 {{form.as_p}}
+	 {{ form.non_field_errors }} 
+	 <input type="submit" name="Submit"><!-- Prints form normally, and makes the hidden input -->
+</div>
+</form>

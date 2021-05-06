@@ -1,0 +1,7 @@
+<h3>Update Form</h3>
+<a href="{% url 'all_user_products' user.id %}"> Go back</a>
+<form method="POST" action="" enctype='multipart/form-data'>
+{% csrf_token %}
+{{form.as_p}}
+<input type="submit" value="Submit">
+</form>
