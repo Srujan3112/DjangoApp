@@ -122,11 +122,10 @@ $(document).ready(function() {
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">Cart</a>
+            <a class="nav-link waves-effect" href="{%url 'cart_items' request.user.id %}">Cart</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/getting-started/download/"
-              target="_blank">My Items</a>
+            <a class="nav-link waves-effect" href="{%url 'all_user_products' request.user.id %}">My Items</a>
           </li>
           <li class="nav-item">
             <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">My Orders</a>

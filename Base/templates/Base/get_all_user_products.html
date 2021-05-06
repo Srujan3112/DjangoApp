@@ -1,8 +1,6 @@
-<a href="{%url 'products' %}">Go back</a>
-<form method="GET">
-<input type="text" name="search-area" value="{{search_input}}">
-<input type="submit" value="search"></form>
-{% for product in products %}
+
+
+{% comment %} {% for product in products %}
 <hr>
 <h1>Task :{{product.title}}</h1> 
 <h1>Description :{{product.description}}</h1> 
@@ -11,11 +9,10 @@
 <h1>category: {{product.category}}</h1>
 <h1>User: {{product.user}}</h1>
 <h1>Created :{{product.created}}</h1>
-<input type="submit" value="Add to cart">
 <td><a href="{%url 'product_update' product.id%}">Edit</a></td>
  <td><a href="{%url 'product_delete' product.id%}">Delete</a></td>
- <hr>
-{% endfor %}
+ <hr> {% endcomment %}
+{% comment %} {% endfor %} {% endcomment %}
 {% load static %}
 {% load crispy_forms_tags %}
 {% load widget_tweaks %}
@@ -140,17 +137,18 @@ $(document).ready(function() {
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">Cart</a>
+            <a class="nav-link waves-effect" href="{%url 'cart_items' request.user.id %}" >Cart</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/getting-started/download/"
-              target="_blank">My Items</a>
+            <a class="nav-link waves-effect" href="{%url 'all_user_products' request.user.id %}">My Items</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">My Orders</a>
+            <a class="nav-link waves-effect" href="#">My Orders</a>
           </li>
         </ul>
-
+        <form method="GET">
+         <input type="text" name="search-area" value="{{search_input}}">
+         <input type="submit" value="search"></form>
         <!-- Right -->
         <ul class="navbar-nav nav-flex-icons">
           <li class="nav-item">
@@ -187,7 +185,8 @@ $(document).ready(function() {
 <!-- ========================= SECTION PAGETOP ========================= -->
 <section class="section-pagetop bg">
 <div class="container">
-	<h2 class="title-page">Cart Items</h2>
+	<h2 class="title-page">User Items</h2>
+   <a href="{%url 'products' %}">Go back</a>
 	<!-- <nav>
 	<ol class="breadcrumb text-white">
 	    <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -202,18 +201,18 @@ $(document).ready(function() {
 <!-- ========================= SECTION CONTENT ========================= -->
 <section class="section-content padding-y">
 <div class="container">
-{% for cart_product in cart_products  %}
+{% for product in products  %}
             <article class="card card-product-list">
                   <div class="row no-gutters">
                         <aside class="col-md-3">
                               <a href="#" class="img-wrap" style="padding : 15px;">
                                     <!-- <span class="badge badge-danger"> NEW </span> -->
-                                    <img src={{cart_product.product.image.url}}>
+                                    <img src={{product.image.url}}>
                               </a>
                         </aside> <!-- col.// -->
                         <div class="col-md-6">
                               <div class="info-main">
-                                    <a href="#" class="h5 title"> {{cart_product.product.title}} </a>
+                                    <a href="#" class="h5 title"> {{product.title}} </a>
                                     {% comment %} <div class="rating-wrap mb-3">
                                           <ul class="rating-stars">
                                                 <li style="width:80%" class="stars-active"> 
@@ -230,21 +229,23 @@ $(document).ready(function() {
                                           <!-- <div class="label-rating">7/10</div> -->
                                     </div> <!-- rating-wrap.// --> {% endcomment %}
                                     
-                                    <p>{{cart_product.product.description}} </p>
+                                    <p>{{product.description}} </p>
+                                    <p>category: {{product.category}}</p>
+                                    <p>Created :{{product.created}}</p>
                               </div> <!-- info-main.// -->
                         </div> <!-- col.// -->
                         <aside class="col-sm-3">
                               <div class="info-aside">
                                     <div class="price-wrap">
-                                          <span class="price h5">${{cart_product.product.price}} </span>	
+                                          <span class="price h5">${{product.price}} </span>	
                                           <!-- <del class="price-old"> $198</del> -->
                                     </div> <!-- info-price-detail // -->
                                     <!-- <p class="text-success">Free shipping</p> -->
                                     <br>
                                     <p>
-                                          <a href={%url 'product' cart_product.product.id %} class="btn btn-primary btn-block"> Details </a>
-                                          <a href={%url 'update_item' cart_product.product.id%} class="btn btn-primary btn-block"> Edit </a>
-                                          <a href={%url 'delete_item' cart_product.product.id%} class="btn btn-primary btn-block"> Delete </a>
+                                          <a href={%url 'product' product.id %} class="btn btn-primary btn-block"> Details </a>
+                                          <a href="{%url 'product_update' product.id %}" class="btn btn-primary btn-block"> Edit </a>
+                                          <a href="{%url 'product_delete' product.id%}" class="btn btn-primary btn-block"> Delete </a>
                                           <a href="#" class="btn btn-light btn-block"><i class="fa fa-heart"></i> 
                                                 <span class="text">Add to wishlist</span>
                                           </a>
