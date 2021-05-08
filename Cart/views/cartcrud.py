@@ -17,28 +17,44 @@ def createCartItem(request, pk):
         form = CartItemForm(request.POST)
         if form.is_valid():
             form.save()
+            cart_items = CartItem.objects.filter(user=request.user, cart=cart.id)
+            total_price = 0
+            for items in cart_items:
+                total_price += (items.product.price * items.quantity)
+            cart.total_price = total_price
+            quantity = cart_items.count()
+            cart.quantity = quantity
+            cart.save()
             return redirect('/')
-    total_price = 0
-    cart_items = CartItem.objects.filter(user=request.user, cart=cart.id)
-    for items in cart_items:
-        total_price += items.price
-    cart.total_price = total_price
-    cart.save()
+    #
+    # cart_items = CartItem.objects.filter(user=request.user, cart=cart.id)
+    # for items in cart_items:
+    #     total_price += (items.product.price * items.quantity)
+    # cart.total_price = total_price
+    print(cart.total_price)
+    print(cart.quantity)
+    # cart.save()
     form = CartItemForm(
         initial={'user': request.user, 'price': product.price, 'product': product, 'ordered': False, 'cart': cart})
     context = {'form': form, 'user': request.user.username, 'title': product.title, 'image': product.image.url,
-               'total_price': total_price}
+               'total_price': cart.total_price}
+
     return render(request, 'Cart/order_form.html', context)
 
 
 def updateCartItem(request, pk):
     product = Product.objects.get(id=pk)
+    cart, _ = Cart.objects.get_or_create(user=request.user)
     cart_item = CartItem.objects.get(product=product.id, user=request.user)
     form = CartItemForm(instance=cart_item)
 
     if request.method == 'POST':
         form = CartItemForm(request.POST, instance=cart_item)
         form.save()
+        cart_items = CartItem.objects.filter(user=request.user, cart=cart.id)
+        quantity = cart_items.count()
+        cart.quantity = quantity
+        cart.save()
         return redirect('/')
         # if form.is_valid():
     context = {'form': form}
@@ -47,9 +63,14 @@ def updateCartItem(request, pk):
 
 def deleteCartItem(request, pk):
     product = Product.objects.get(id=pk)
+    cart, _ = Cart.objects.get_or_create(user=request.user)
     cart_item = CartItem.objects.get(product=product.id, user=request.user)
     if request.method == "POST":
         cart_item.delete()
+        cart_items = CartItem.objects.filter(user=request.user, cart=cart.id)
+        quantity = cart_items.count()
+        cart.quantity = quantity
+        cart.save()
         return redirect('/')
 
     context = {'item': cart_item}

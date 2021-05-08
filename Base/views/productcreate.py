@@ -7,7 +7,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 class ProductCreate(LoginRequiredMixin, CreateView):
     model = Product
     template_name = 'base/product_create.html'
-    fields = ['title', 'description', 'image', 'price', 'category']
+    fields = ['title', 'description', 'image', 'price', 'category','quantity']
     success_url = reverse_lazy('products')
 
     def form_valid(self, form):

@@ -7,6 +7,7 @@ class ProductList(LoginRequiredMixin, ListView):
     model = Product
     context_object_name = 'products'
     template_name = 'base/product_list.html'
+    paginate_by =8
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

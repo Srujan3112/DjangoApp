@@ -3,6 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="77a5559a-7b7a-445f-9d0b-c7006152d278" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/templates/Base/basic.html" beforeDir="false" afterPath="$PROJECT_DIR$/Base/templates/Base/basic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/templates/Base/get_all_user_products.html" beforeDir="false" afterPath="$PROJECT_DIR$/Base/templates/Base/get_all_user_products.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/templates/Base/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/Base/templates/Base/product_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/templates/Base/product_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Base/templates/Base/product_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/templates/Base/product_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/Base/templates/Base/product_update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/views/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/views/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/views/productcreate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/views/productcreate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/views/productlist.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/views/productlist.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/views/productupdate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/views/productupdate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cart/models/cartitem.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cart/models/cartitem.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cart/templates/Cart/cartitems_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cart/templates/Cart/cartitems_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cart/views/cartcrud.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cart/views/cartcrud.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cart/views/cartitemslist.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cart/views/cartitemslist.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -13,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
