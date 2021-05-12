@@ -1,12 +1,25 @@
-<form action="" method="POST">
+{% comment %} {% extends 'Base/basic.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %} {% endcomment %}
+ <form action="" method="POST">
 				{% csrf_token %}
 				<div>
     {{ user}} <!-- This prints the value -->
-    {{ title}}
+    {{form.product.title}}
 	 {{form.price.value}}
-	 <img src="{{image}}">
+	 <img src="{{product.image.url.value}}">
 	 {{form.as_p}}
-	 {{ form.non_field_errors }} 
+	 {% comment %} {{ form.non_field_errors }}  {% endcomment %}
 	 <input type="submit" name="Submit"><!-- Prints form normally, and makes the hidden input -->
 </div>
 </form>
+{% comment %} <a href="{%url 'products' %}">Go back</a>
+<h1>Task :{{product.title}}</h1> 
+<h1>Description :{{product.description}}</h1> 
+<img src="{{product.image.url}}" alt="Sorry there's a problem with your network">
+<h1>price :{{product.price}}</h1>
+<h1>category: {{product.category}}</h1>
+<h1>User: {{product.user}}</h1>
+<h1>Created :{{product.created}}</h1>
+<input type="submit" value="Add to cart"> {% endcomment %}

@@ -1,6 +1,7 @@
 from django.views.generic.list import ListView
 from ..models import Product
 from django.contrib.auth.mixins import LoginRequiredMixin
+from Cart.models import Cart
 
 
 class GetAllUserProducts(LoginRequiredMixin, ListView):
@@ -16,4 +17,6 @@ class GetAllUserProducts(LoginRequiredMixin, ListView):
         if search_input:
             context['products'] = context['products'].filter(title__startswith=search_input)
         context['search_input'] = search_input
+        cart, _ = Cart.objects.get_or_create(user=self.request.user)
+        context['quantity'] = cart.quantity
         return context

@@ -20,6 +20,7 @@
   <link href="{%static 'Product_detail/css/mdb.min.css' %}" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="{%static 'Product_detail/css/style.min.css' %}" rel="stylesheet">
+  
   {% endblock scripts %}
 <body>
    {% block content %}
@@ -67,9 +68,11 @@
 
             <p>{{product.description}}</p>
 
-            <form class="d-flex justify-content-left">
+            <form class="d-flex justify-content-left" action="{%url 'create_item' product.id %}" method="POST">
               <!-- Default input -->
               <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
+                                    {% csrf_token %}
+                                    {% comment %} <input type="submit" value="Add to cart"> {% endcomment %}
               <button class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
                 <i class="fas fa-shopping-cart ml-1"></i>
               </button>

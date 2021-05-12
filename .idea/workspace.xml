@@ -3,20 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="77a5559a-7b7a-445f-9d0b-c7006152d278" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/models/product.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/models/product.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Base/templates/Base/basic.html" beforeDir="false" afterPath="$PROJECT_DIR$/Base/templates/Base/basic.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Base/templates/Base/get_all_user_products.html" beforeDir="false" afterPath="$PROJECT_DIR$/Base/templates/Base/get_all_user_products.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/templates/Base/product_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/Base/templates/Base/product_create.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Base/templates/Base/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/Base/templates/Base/product_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Base/templates/Base/product_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Base/templates/Base/product_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Base/templates/Base/product_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/Base/templates/Base/product_update.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Base/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Base/views/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/views/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/views/basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/views/basic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/views/get_all_user_products.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/views/get_all_user_products.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Base/views/productcreate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/views/productcreate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/views/productdetail.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/views/productdetail.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Base/views/productlist.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/views/productlist.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Base/views/productupdate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/views/productupdate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cart/models/cartitem.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cart/models/cartitem.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cart/templates/Cart/cartitems_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cart/templates/Cart/cartitems_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cart/templates/Cart/order_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cart/templates/Cart/order_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cart/views/cartcrud.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cart/views/cartcrud.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cart/views/cartitemslist.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cart/views/cartitemslist.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DjangoApp/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoApp/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +58,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/trulyexpensesyoutube" />
+    <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">

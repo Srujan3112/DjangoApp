@@ -40,8 +40,9 @@ INSTALLED_APPS = [
     'Cart',
     'crispy_forms',
     'widget_tweaks',
+    'django_filters',
 ]
-CRISPY_TEMPLATE_FORM='bootstrap4'
+CRISPY_TEMPLATE_FORM = 'bootstrap4'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -124,8 +125,8 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = BASE_DIR
 MEDIA_URL = "/image/dowloads/"
-STATICFILES_DIRS=[
-    os.path.join(BASE_DIR,'Auth/static'),
-    os.path.join(BASE_DIR,'Base/static'),
-    os.path.join(BASE_DIR,'Cart/static'),
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'Auth/static'),
+    os.path.join(BASE_DIR, 'Base/static'),
+    os.path.join(BASE_DIR, 'Cart/static'),
 ]

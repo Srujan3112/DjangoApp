@@ -74,7 +74,7 @@
         <!-- Left -->
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link waves-effect" href="#">Home
+            <a class="nav-link waves-effect" href={%url 'products'%}>Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -96,7 +96,7 @@
         <ul class="navbar-nav nav-flex-icons">
           <li class="nav-item">
             <a class="nav-link waves-effect" href="{%url 'cart_items' request.user.id %}">
-              <span class="badge red z-depth-1 mr-1"> 1 </span>
+              <span class="badge red z-depth-1 mr-1">{{quantity}} </span>
               <i class="fas fa-shopping-cart"></i>
               <span class="clearfix d-none d-sm-inline-block"> Cart </span>
             </a>

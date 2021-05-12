@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 
 class Product(models.Model):
-    title = models.CharField(max_length=250)
+    title = models.CharField(max_length=250, unique=True)
     description = models.TextField(max_length=250, blank=True, null=True)
     image = models.ImageField(upload_to='uploads/products/')
     price = models.IntegerField(default=0)

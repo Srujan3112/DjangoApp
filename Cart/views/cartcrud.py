@@ -26,18 +26,10 @@ def createCartItem(request, pk):
             cart.quantity = quantity
             cart.save()
             return redirect('/')
-    #
-    # cart_items = CartItem.objects.filter(user=request.user, cart=cart.id)
-    # for items in cart_items:
-    #     total_price += (items.product.price * items.quantity)
-    # cart.total_price = total_price
-    print(cart.total_price)
-    print(cart.quantity)
-    # cart.save()
     form = CartItemForm(
         initial={'user': request.user, 'price': product.price, 'product': product, 'ordered': False, 'cart': cart})
     context = {'form': form, 'user': request.user.username, 'title': product.title, 'image': product.image.url,
-               'total_price': cart.total_price}
+               'total_price': cart.total_price,'quantity':cart.quantity}
 
     return render(request, 'Cart/order_form.html', context)
 
@@ -47,7 +39,6 @@ def updateCartItem(request, pk):
     cart, _ = Cart.objects.get_or_create(user=request.user)
     cart_item = CartItem.objects.get(product=product.id, user=request.user)
     form = CartItemForm(instance=cart_item)
-
     if request.method == 'POST':
         form = CartItemForm(request.POST, instance=cart_item)
         form.save()
@@ -57,7 +48,8 @@ def updateCartItem(request, pk):
         cart.save()
         return redirect('/')
         # if form.is_valid():
-    context = {'form': form}
+    context = {'form': form,'quantity':cart.quantity}
+    print(form)
     return render(request, 'Cart/order_form.html', context)
 
 
@@ -73,5 +65,5 @@ def deleteCartItem(request, pk):
         cart.save()
         return redirect('/')
 
-    context = {'item': cart_item}
+    context = {'item': cart_item,'quantity':cart.quantity}
     return render(request, 'Cart/delete.html', context)
