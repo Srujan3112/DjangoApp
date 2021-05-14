@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77a5559a-7b7a-445f-9d0b-c7006152d278" name="Default Changelist" comment="" />
+    <list default="true" id="77a5559a-7b7a-445f-9d0b-c7006152d278" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/static/Product_detail/css/mdb.css" beforeDir="false" afterPath="$PROJECT_DIR$/Base/static/Product_detail/css/mdb.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/static/Product_detail/css/mdb.lite.css" beforeDir="false" afterPath="$PROJECT_DIR$/Base/static/Product_detail/css/mdb.lite.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/static/Product_detail/css/mdb.lite.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Base/static/Product_detail/css/mdb.lite.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/static/Product_detail/css/mdb.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Base/static/Product_detail/css/mdb.min.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
