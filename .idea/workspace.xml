@@ -2,11 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77a5559a-7b7a-445f-9d0b-c7006152d278" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Base/static/Product_detail/font/roboto/Roboto-Black.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/static/Product_detail/font/roboto/Roboto-BlackItalic.eot" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Base/static/Product_detail/font/roboto/Roboto-Bold.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/static/Product_detail/font/roboto/Roboto-BoldItalic.eot" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Base/static/Product_detail/font/roboto/Roboto-Light.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/static/Product_detail/font/roboto/Roboto-LightItalic.eot" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Base/static/Product_detail/font/roboto/Roboto-Medium.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/static/Product_detail/font/roboto/Roboto-MediumItalic.eot" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Base/static/Product_detail/font/roboto/Roboto-Regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/static/Product_detail/font/roboto/Roboto-RegularItalic.eot" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Base/static/Product_detail/font/roboto/Roboto-Thin.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/static/Product_detail/font/roboto/Roboto-ThinItalic.eot" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
