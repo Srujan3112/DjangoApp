@@ -9,7 +9,7 @@ class Product(models.Model):
     image = models.ImageField(upload_to='uploads/products/')
     price = models.IntegerField(default=0)
     created = models.DateTimeField(auto_now_add=True)
-    category = models.ForeignKey(Categorie, on_delete=models.CASCADE, default=1)
+    category = models.ForeignKey(Categorie, on_delete=models.CASCADE,blank=True,null=True)
     quantity = models.IntegerField(default=1)
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
 

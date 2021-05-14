@@ -83,6 +83,7 @@ $(document).ready(function() {
                                     </div> <!-- rating-wrap.// --> {% endcomment %}
                                     
                                     <p>{{cart_product.product.description}} </p>
+                                    <p>Quantity:{{cart_product.quantity}}</p>
                               </div> <!-- info-main.// -->
                         </div> <!-- col.// -->
                         <aside class="col-sm-3">
@@ -103,7 +104,9 @@ $(document).ready(function() {
                                     </p>
                               </div> <!-- info-aside.// -->
                         </aside> <!-- col.// -->
-                  </div> <!-- row.// -->
+               
+                  </div> 
+                         <!-- row.// -->
             </article> <!-- card-product .// -->
 
 {%empty%}
@@ -122,7 +125,13 @@ $(document).ready(function() {
 </nav> {% endcomment %}
 
 	</main> 
+     <form action="{%url 'orders' request.user.id %}" method="GET">
+     <input type="text" name="choice" value="True" class="d-none">
+                              <button type="submit" class="badge green mr-1">Order</button>
+                              {% comment %} <a class="badge purple mr-1" href="{%url 'all_category_products' product.category.id %}"></a> {% endcomment %}
+                              </form>
 </div>
+
 </div> <!-- container .//  -->
 </section>
 {% endblock content %}

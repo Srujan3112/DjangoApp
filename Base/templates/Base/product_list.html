@@ -141,7 +141,7 @@
                                     </strong>
                               </h5>
                               <form action="{%url 'all_category_products' product.category.id %}" method="GET">
-                              <button type="submit">{{product.category}}</button>
+                              <button type="submit" class="badge purple mr-1">{{product.category}}</button>
                               {% comment %} <a class="badge purple mr-1" href="{%url 'all_category_products' product.category.id %}"></a> {% endcomment %}
                               </form>
                               <h4 class="font-weight-bold blue-text">
@@ -193,7 +193,10 @@
                                     <a href="" class="dark-grey-text">{{product.title}}</a>
                                     </strong>
                               </h5>
-                              <a class="badge purple mr-1" href="#">{{product.category}}</a>
+                              <form action="{%url 'all_category_products' product.category.id %}" method="GET">
+                              <button type="submit" class="badge purple mr-1">{{product.category}}</button>
+                              {% comment %} <a class="badge purple mr-1" href="{%url 'all_category_products' product.category.id %}"></a> {% endcomment %}
+                              </form>
 
                               <h4 class="font-weight-bold blue-text">
                                     <strong>${{product.price}}</strong>

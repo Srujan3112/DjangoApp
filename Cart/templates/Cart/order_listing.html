@@ -1,0 +1,128 @@
+{% extends 'Base/basic.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+
+ {% block scripts %}
+<table>
+ <div style="min-height: 50px;"></div></table>
+<link href={%static 'products_listing/images/favicon.ico' %} rel="shortcut icon" type="image/x-icon">
+
+<!-- jQuery -->
+<script src={%static 'products_listing/js/jquery-2.0.0.min.js' %} type="text/javascript"></script>
+
+<!-- Bootstrap4 files-->
+ <script src={%static 'products_listing/js/bootstrap.bundle.min.js'%} type="text/javascript"></script>
+<link href={%static 'products_listing/css/bootstrap.css'%} rel="stylesheet" type="text/css"/>
+<link href="{%static 'Product_detail/css/mdb.min.css' %}" rel="stylesheet">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+<!-- custom style -->
+<link href={%static 'products_listing/css/ui.css'%} rel="stylesheet" type="text/css"/>
+<link href={%static 'products_listing/css/responsive.css'%} rel="stylesheet" media="only screen and (max-width: 1200px)" />
+
+<!-- custom javascript -->
+<script src={%static 'products_listing/js/script.js'%} type="text/javascript"></script>
+
+<script type="text/javascript">
+/// some script
+
+// jquery ready start
+$(document).ready(function() {
+	// jQuery code
+
+}); 
+// jquery end
+</script>
+ {% endblock scripts %}
+
+<!-- ========================= SECTION PAGETOP ========================= -->
+{% block content %}
+<section class="section-pagetop bg">
+<div class="container">
+	<h2 class="title-page">Orders</h2>
+	<!-- <nav>
+	<ol class="breadcrumb text-white">
+	    <li class="breadcrumb-item"><a href="#">Home</a></li>
+	    <li class="breadcrumb-item"><a href="#">Best category</a></li>
+	    <li class="breadcrumb-item active" aria-current="page">Great articles</li>
+	</ol>  
+	</nav> -->
+</div> <!-- container //  -->
+</section>
+<!-- ========================= SECTION INTRO END// ========================= -->
+
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-content padding-y">
+<div class="container">
+{% for order_item in order_items  %}
+            <article class="card card-product-list">
+                  <div class="row no-gutters">
+                        <aside class="col-md-3">
+                              <a href="#" class="img-wrap" style="padding : 15px;">
+                                    <!-- <span class="badge badge-danger"> NEW </span> -->
+                                    <img src={{order_item.order_item.image.url}}>
+                              </a>
+                        </aside> <!-- col.// -->
+                        <div class="col-md-6">
+                              <div class="info-main">
+                                    <a href="#" class="h5 title"> {{order_item.order_item.title}} </a>
+                                    {% comment %} <div class="rating-wrap mb-3">
+                                          <ul class="rating-stars">
+                                                <li style="width:80%" class="stars-active"> 
+                                                      <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+                                                      <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+                                                      <i class="fa fa-star"></i> 
+                                                </li>
+                                                <li>
+                                                      <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+                                                      <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+                                                      <i class="fa fa-star"></i> 
+                                                </li>
+                                          </ul>
+                                          <!-- <div class="label-rating">7/10</div> -->
+                                    </div> <!-- rating-wrap.// --> {% endcomment %}
+                                    
+                                    <p>{{order_item.order_item.description}} </p>
+                                    <p>Quantity:{{order_item.quantity}}</p>
+                                    <p>{{order_item.created}}</p>
+                              </div> <!-- info-main.// -->
+                        </div> <!-- col.// -->
+                        <aside class="col-sm-3">
+                              <div class="info-aside">
+                                    <div class="price-wrap">
+                                          <span class="price h5">${{order_item.order_item.price}} </span>	
+                                          <!-- <del class="price-old"> $198</del> -->
+                                    </div> <!-- info-price-detail // -->
+                                    <!-- <p class="text-success">Free shipping</p> -->
+                                    <br>
+                              </div> <!-- info-aside.// -->
+                        </aside> <!-- col.// -->
+               
+                  </div> 
+                         <!-- row.// -->
+            </article> <!-- card-product .// -->
+
+{%empty%}
+<h3> No Items are present</h3>
+{% endfor %}
+		
+{% comment %}     
+<nav aria-label="Page navigation sample">
+  <ul class="pagination">
+    <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  </ul>
+</nav> {% endcomment %}
+
+	</main> 
+                              {% comment %} <a class="badge purple mr-1" href="{%url 'all_category_products' product.category.id %}"></a> {% endcomment %}
+</div>
+</div> <!-- container .//  -->
+</section>
+{% endblock content %}
+<!-- ========================= SECTION CONTENT END// =========================-->
+</body>
+</html>

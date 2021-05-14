@@ -23,12 +23,22 @@ class CartItem(models.Model):
     quantity = models.IntegerField(default=1)
 
     def __str__(self):
-        return str(self.user.username) + " " + str(self.product.title)
+        if self.user.username and self.product.title:
+            return str(self.user.username) + " " + str(self.product.title)
+        else:
+            return "TestUser"+" "+"TestTitle"
+
+
 
 
 @receiver(pre_save, sender=CartItem)
 def updater(sender, **kwargs):
     cart_item = kwargs['instance']
-    product_instance = Product.objects.get(id=cart_item.product.id)
-    cart_item.price = cart_item.quantity * product_instance.price
-    cart_item.ordered = True
+    try:
+        id_val=cart_item.product.id
+        product_instance = Product.objects.get(id=id_val)
+        cart_item.price = cart_item.quantity * product_instance.price
+        cart_item.ordered = True
+    except:
+        pass
+
