@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-cu_p7afh_13c8xka)mkmm2#y*m@%2(#c152e@1j%k1r7a7^t(m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['start-cadet.herokuapp.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
@@ -131,4 +131,5 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'Cart/static'),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 django_heroku.settings(locals())
