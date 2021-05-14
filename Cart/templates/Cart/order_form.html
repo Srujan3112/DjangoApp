@@ -1,19 +1,207 @@
-{% comment %} {% extends 'Base/basic.html' %}
+{% load widget_tweaks %}
 {% load static %}
 {% load crispy_forms_tags %}
-{% load widget_tweaks %} {% endcomment %}
- <form action="" method="POST">
-				{% csrf_token %}
-				<div>
-    {{ user}} <!-- This prints the value -->
-    {{form.product.title}}
-	 {{form.price.value}}
-	 <img src="{{product.image.url.value}}">
-	 {{form.as_p}}
-	 {% comment %} {{ form.non_field_errors }}  {% endcomment %}
-	 <input type="submit" name="Submit"><!-- Prints form normally, and makes the hidden input -->
-</div>
-</form>
+{% load widget_tweaks %}
+{% load isordered %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Django App</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="{%static 'homepage/css/bootstrap.min.css'%}" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="{%static 'homepage/css/mdb.min.css'%}" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="{%static 'homepage/css/style.min.css'%}" rel="stylesheet">
+  <style type="text/css">
+    html,
+    body,
+    header,
+    .carousel {
+      height: 60vh;
+    }
+    .card {
+    min-width: 260px;
+    }
+    .img{
+          padding-left: 50px;
+          padding-bottom:50;
+          padding-right:50px;
+          padding-top: 50px;
+    }
+    @media (max-width: 740px) {
+
+      html,
+      body,
+      header,
+      .carousel {
+        height: 100vh;
+      }
+    }
+
+    @media (min-width: 800px) and (max-width: 850px) {
+
+      html,
+      body,
+      header,
+      .carousel {
+        height: 100vh;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+    <div class="container">
+        <strong class="navbar-brand font-weight-bold waves-effect blue-text">Grocery Store</strong>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Left -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link waves-effect" href={%url 'products'%}>Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="{% url 'all_user_products' request.user.id %}">My Items</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="{%url 'orders' request.user.id%}" >My Orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="{% url 'product_create'%}" >Add Product</a>
+          </li>
+        </ul>
+        <form method="GET">
+            <input type="text" name="search-area" value="{{search_input}}">
+            <input type="submit" value="search"></form>
+
+        <!-- Right -->
+        <ul class="navbar-nav nav-flex-icons">
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="{%url 'cart_items' request.user.id %}">
+              <span class="badge red z-depth-1 mr-1">{{quantity}} </span>
+              <i class="fas fa-shopping-cart"></i>
+              <span class="clearfix d-none d-sm-inline-block"> Cart </span>
+            </a>
+          </li>
+          {% if request.user.is_authenticated %}
+            {% comment %} <p>{{request.user}}</p> {% endcomment %}
+            <li class="nav-item">
+            <a href="{%url 'logout'%}" class="nav-link border border-light rounded waves-effect">
+             Log Out
+            </a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a href="{%url 'login'%}" class="nav-link border border-light rounded waves-effect">
+              <!-- target="_blank" -->
+             Log In
+            </a>
+          </li>
+            {% endif %}
+          {% comment %} <li class="nav-item">
+            <a href="#" class="nav-link border border-light rounded waves-effect">
+              <!-- target="_blank" -->
+              <i class="fab fa-github mr-2"></i>MDB GitHub
+            </a>
+          </li> {% endcomment %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <table>
+ <div style="min-height: 200px;"></div></table>
+		<form action="" method="POST">
+					{% csrf_token %}
+					<div>
+		<p>User :{{ user}} <!-- This prints the value --></p>
+		{% return_product request form.product.value as val %}
+		<p>Price: {{form.price.value}}</p>
+		<p>Description:{{val.description}}</p>
+		<p><img src={{val.image.url}}></p>
+		{{form.as_p}}
+		{% comment %} {{ form.non_field_errors }}  {% endcomment %}
+		<input type="submit" name="Submit"><!-- Prints form normally, and makes the hidden input -->
+	</div>
+	</form>
+	<div style="min-height: 200px;"></div></table>
+  <footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+    <!--Call to action-->
+    <div class="pt-4">
+      <a class="btn btn-outline-white" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" target="_blank"
+        role="button">Contact Us
+      </a>
+      <a class="btn btn-outline-white" href="https://mdbootstrap.com/education/bootstrap/" target="_blank" role="button">Feedback
+        {% comment %} <i class="fas fa-graduation-cap ml-2"></i> {% endcomment %}
+      </a>
+    </div>
+    <!--/.Call to action-->
+
+    <hr class="my-4">
+
+    <!-- Social icons -->
+    <div class="pb-4">
+      <a href="https://www.facebook.com/mdbootstrap" target="_blank">
+        <i class="fab fa-facebook-f mr-3"></i>
+      </a>
+
+      <a href="https://twitter.com/MDBootstrap" target="_blank">
+        <i class="fab fa-twitter mr-3"></i>
+      </a>
+
+      <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4" target="_blank">
+        <i class="fab fa-youtube mr-3"></i>
+      </a>
+
+      <a href="https://plus.google.com/u/0/b/107863090883699620484" target="_blank">
+        <i class="fab fa-google-plus-g mr-3"></i>
+      </a>
+
+      <a href="https://dribbble.com/mdbootstrap" target="_blank">
+        <i class="fab fa-dribbble mr-3"></i>
+      </a>
+
+      <a href="https://pinterest.com/mdbootstrap" target="_blank">
+        <i class="fab fa-pinterest mr-3"></i>
+      </a>
+
+      <a href="https://github.com/mdbootstrap/bootstrap-material-design" target="_blank">
+        <i class="fab fa-github mr-3"></i>
+      </a>
+
+      <a href="http://codepen.io/mdbootstrap/" target="_blank">
+        <i class="fab fa-codepen mr-3"></i>
+      </a>
+    </div>
+    <!-- Social icons -->
+
+    <!--Copyright-->
+    <div class="footer-copyright py-3">
+      © 2021 Copyright:
+      <a href="#">Grocery Store</a>
+    </div>
+    <!--/.Copyright-->
+
+  </footer>
+  </body>
+  </html>
 {% comment %} <a href="{%url 'products' %}">Go back</a>
 <h1>Task :{{product.title}}</h1> 
 <h1>Description :{{product.description}}</h1> 

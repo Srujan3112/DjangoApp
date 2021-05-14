@@ -127,7 +127,7 @@ $(document).ready(function() {
 	</main> 
      <form action="{%url 'orders' request.user.id %}" method="GET">
      <input type="text" name="choice" value="True" class="d-none">
-                              <button type="submit" class="badge green mr-1">Order</button>
+                              <button type="submit" class="btn btn-primary">Order</button>
                               {% comment %} <a class="badge purple mr-1" href="{%url 'all_category_products' product.category.id %}"></a> {% endcomment %}
                               </form>
 </div>

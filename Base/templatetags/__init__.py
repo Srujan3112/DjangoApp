@@ -1,1 +1,1 @@
-from .isordered import is_ordered
+from .isordered import is_ordered,return_product

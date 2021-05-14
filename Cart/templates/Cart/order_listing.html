@@ -95,6 +95,11 @@ $(document).ready(function() {
                                     </div> <!-- info-price-detail // -->
                                     <!-- <p class="text-success">Free shipping</p> -->
                                     <br>
+                                    <p>
+                                    {% comment %} {%url 'delete_item' cart_product.product.id%} {% endcomment %}
+                                     <div style="min-height: 66px;"></div></table>
+                                        <a href="{% url 'delete_order_item' order_item.id  %}" class="btn btn-primary btn-block"> Delete </a>
+                                    </p>
                               </div> <!-- info-aside.// -->
                         </aside> <!-- col.// -->
                
