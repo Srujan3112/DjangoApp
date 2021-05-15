@@ -7,7 +7,7 @@ from Cart.models import Cart
 
 class ProductCreate(LoginRequiredMixin, CreateView):
     model = Product
-    template_name = 'base/product_create.html'
+    template_name = 'Base/product_create.html'
     fields = ['title', 'description', 'image', 'price', 'category', 'quantity']
     success_url = reverse_lazy('products')
 

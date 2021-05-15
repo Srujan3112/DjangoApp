@@ -7,7 +7,7 @@ from Base.models import Product
 class CategoryList(LoginRequiredMixin, ListView):
     model = Product
     context_object_name = 'categoryItems'
-    template_name = 'base/specific_category.html'
+    template_name = 'Base/specific_category.html'
     paginate_by = 8
 
     def get_queryset(self):

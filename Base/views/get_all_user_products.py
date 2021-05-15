@@ -7,7 +7,7 @@ from Cart.models import Cart
 class GetAllUserProducts(LoginRequiredMixin, ListView):
     model = Product
     context_object_name = 'products'
-    template_name = 'base/get_all_user_products.html'
+    template_name = 'Base/get_all_user_products.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

@@ -8,7 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 class ProductDetail(LoginRequiredMixin, DetailView):
     model = Product
     context_object_name = 'product'
-    template_name = 'base/product_detail.html'
+    template_name = 'Base/product_detail.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

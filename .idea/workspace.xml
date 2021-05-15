@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77a5559a-7b7a-445f-9d0b-c7006152d278" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Auth/static/Authforms/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth/static/Authforms/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/static/Authforms/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth/static/Authforms/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth/templates/Auth/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/templates/Auth/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth/templates/Auth/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/templates/Auth/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DjangoApp/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoApp/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticfiles/Authforms/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/staticfiles/Authforms/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/views/get_all_user_products.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/views/get_all_user_products.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/views/productcreate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/views/productcreate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/views/productdetail.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/views/productdetail.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/views/productlist.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/views/productlist.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/views/productupdate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/views/productupdate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/views/view_specific_category.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/views/view_specific_category.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staticfiles/staticfiles.json" beforeDir="false" afterPath="$PROJECT_DIR$/staticfiles/staticfiles.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
