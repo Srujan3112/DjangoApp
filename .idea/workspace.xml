@@ -11,6 +11,7 @@
       <change beforePath="$PROJECT_DIR$/Base/templates/Base/specific_category.html" beforeDir="false" afterPath="$PROJECT_DIR$/Base/templates/Base/specific_category.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Base/views/productdelete.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/views/productdelete.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Base/views/view_specific_category.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/views/view_specific_category.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cart/templates/Cart/cartitem_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cart/templates/Cart/cartitem_create.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cart/templates/Cart/cartitems_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cart/templates/Cart/cartitems_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cart/templates/Cart/delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cart/templates/Cart/delete.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cart/templates/Cart/order_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cart/templates/Cart/order_delete.html" afterDir="false" />
