@@ -1,6 +1,111 @@
-<a href="{%url 'products'%}">Go back</a>
+{% extends 'Base/basic.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% load isordered %}
+  {% block scripts %}<table>
+ <div style="min-height: 100px;"></div></table>{% endblock scripts %}
+{% block content %}
+
+  <main class="mt-5 pt-4">
+    <div class="container dark-grey-text mt-5">
+
+      <!--Grid row-->
+      <div class="row wow fadeIn">
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+
+          <img src="{{product.image.url}}" class="img-fluid" alt="">
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+
+          <!--Content-->
+          <div class="p-4">
+
+            <div class="mb-3">
+                                         <form action="{%url 'all_category_products' product.category.id %}" method="GET">
+                              <button type="submit" class="badge purple mr-1">{{product.category}}</button>
+            </div>
+            <p class="lead">
+              {% comment %} <span class="mr-1">
+                <del>$200</del>
+              </span> {% endcomment %}
+              <span>INR {{product.price}}</span>
+            </p>
+
+            <p class="lead font-weight-bold">{{product.title}}</p>
+            <p class="font-weight-bold">Seller :{{product.user}}</p>
+
+            <p>{{product.description}}</p>
+          </div>
+          <!--Content-->
+          <table>
+ <div style="min-height: 10px;"></div></table>
 <form method="POST">
 {% csrf_token %}
 <p>Are you sure  you want to delete this product? {{product}}</p>
-<input type="submit" value="Delete">
+ <button type="submit" class="btn btn-danger">Delete</button>
 </form>
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+      <hr>
+
+      <!--Grid row-->
+      <div class="row d-flex justify-content-center wow fadeIn">
+
+        <!--Grid column-->
+        <div class="col-md-6 text-center">
+
+          <h4 class="my-4 h4">Additional information</h4>
+
+          <p>Have a good day and enjoy the products offered by us</p>
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+      <!--Grid row-->
+      <div class="row wow fadeIn">
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-12 mb-4">
+
+          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/11.jpg" class="img-fluid" alt="">
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4">
+
+          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/12.jpg" class="img-fluid" alt="">
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4">
+
+          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg" class="img-fluid" alt="">
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+    </div>
+  </main>
+
+
+{% endblock content %}

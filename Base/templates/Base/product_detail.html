@@ -43,39 +43,29 @@
           <div class="p-4">
 
             <div class="mb-3">
-              <a href="">
-                <span class="badge purple mr-1">{{product.category}}</span>
-              </a>
-              <a href="">
-                <span class="badge blue mr-1">New</span>
-              </a>
-              <a href="">
-                <span class="badge red mr-1">Bestseller</span>
-              </a>
+                                         <form action="{%url 'all_category_products' product.category.id %}" method="GET">
+                              <button type="submit" class="badge purple mr-1">{{product.category}}</button></form>
             </div>
-
             <p class="lead">
               {% comment %} <span class="mr-1">
                 <del>$200</del>
               </span> {% endcomment %}
-              <span>${{product.price}}</span>
+              <span>INR {{product.price}}</span>
             </p>
 
-            <p class="lead font-weight-bold">Description</p>
+            <p class="lead font-weight-bold">{{product.title}}</p>
+            <p class="font-weight-bold">Seller :{{product.user}}</p>
 
             <p>{{product.description}}</p>
 
-            <form class="d-flex justify-content-left" action="{%url 'create_item' product.id %}" method="POST">
+             <form class="d-flex justify-content-left" action="{%url 'create_item' product.id %}" method="POST">
+             {% csrf_token %}
               <!-- Default input -->
-              <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
-                                    {% csrf_token %}
                                     {% comment %} <input type="submit" value="Add to cart"> {% endcomment %}
               <button class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
                 <i class="fas fa-shopping-cart ml-1"></i>
               </button>
-
-            </form>
-
+             </form>
           </div>
           <!--Content-->
 
@@ -95,9 +85,7 @@
 
           <h4 class="my-4 h4">Additional information</h4>
 
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus suscipit modi sapiente illo soluta odit
-            voluptates,
-            quibusdam officia. Neque quibusdam quas a quis porro? Molestias illo neque eum in laborum.</p>
+          <p>Have a good day and enjoy the products offered by us</p>
 
         </div>
         <!--Grid column-->

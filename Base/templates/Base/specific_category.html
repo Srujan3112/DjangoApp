@@ -66,21 +66,16 @@
 
           <!-- Links -->
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">All
-                <span class="sr-only">(current)</span>
+            <li class="nav-item">
+              <a class="nav-link" {%url 'all_category_products' 2 %}>Fruits
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Shirts</a>
+              <a class="nav-link"{%url 'all_category_products' 1 %}>Vegetables</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Sport wears</a>
+              <a class="nav-link" href="#">Miscellaneous</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Outwears</a>
-            </li>
-
           </ul>
           <!-- Links -->
 
@@ -91,7 +86,6 @@
           </form>
         </div>
         <!-- Collapsible content -->
-
       </nav>
       <!--/.Navbar-->
 
@@ -120,32 +114,39 @@
                               <div class="card-body text-center">
                               <!--Category & Title-->
                               {% is_ordered request categoryItem as boolean %}
-                              {% if not boolean %}
-                                    <td><form action="{%url 'create_item' categoryItem.id %}" method="POST">
-                                    {% csrf_token %}
-                                    <input type="submit" value="Add to cart">
-                                    </form></td>
-                              {% else %} 
-                                    <td><form action="{%url 'update_item' categoryItem.id %}">
-                                    {% csrf_token %}
-                                    <input type="submit"  value="Go to cart">
-                                    </form></td>
-                              {% endif %}
-                              {% comment %} <a href="" class="grey-text">
-                                    <h5>Outwear</h5>
-                              </a> {% endcomment %}
-                              <a href="{%url 'product' categoryItem.id%}">View</a>
+                                                            <div class="row  fadeIn justify-content-center">
                               <h5>
                                     <strong>
                                     <a href="" class="dark-grey-text">{{categoryItem.title}}</a>
                                     </strong>
                               </h5>
+                               <div style="padding-left:10px;">
                               <form action="{%url 'all_category_products' categoryItem.category.id %}" method="GET">
                               <button type="submit"  class="badge purple mr-1">{{categoryItem.category}}</button>
                               {% comment %} <a class="badge purple mr-1" href="{%url 'all_category_products' product.category.id %}"></a> {% endcomment %}
                               </form>
+                              </div>
+                              </div>
+                              <div class="row  fadeIn justify-content-center">
+                              {% if not boolean %}
+                                    <td><form action="{%url 'create_item' categoryItem.id %}" method="POST">
+                                    {% csrf_token %}
+                                     <button class="btn btn-primary btn-sm" type="submit">Add to cart</button>
+                                    </form></td>
+                              {% else %} 
+                                    <td><form action="{%url 'update_item' categoryItem.id %}">
+                                    {% csrf_token %}
+                                     <button class="btn btn-primary btn-sm" type="submit">Go to cart</button>
+                                    </form></td>
+                              {% endif %}
+                              {% comment %} <a href="" class="grey-text">
+                                    <h5>Outwear</h5>
+                              </a> {% endcomment %}
+                              <div style="padding-top:20px;"><a href="{%url 'product' categoryItem.id%}">View</a></div>
+                              </div>
+
                               <h4 class="font-weight-bold blue-text">
-                                    <strong>${{categoryItem.price}}</strong>
+                                    <strong>INR {{categoryItem.price}}</strong>
                               </h4>
 
                               </div>
@@ -173,37 +174,44 @@
                               <div class="card-body text-center">
                               <!--Category & Title-->
                               {% is_ordered request categoryItem as boolean %}
-                              {% if not boolean %}
-                                    <td><form action="{%url 'create_item' categoryItem.id %}" method="POST">
-                                    {% csrf_token %}
-                                    <input type="submit" value="Add to cart">
-                                    </form></td>
-                              {% else %} 
-                                    <td><form action="{%url 'update_item' categoryItem.id %}">
-                                    {% csrf_token %}
-                                    <input type="submit"  value="Go to cart">
-                                    </form></td>
-                              {% endif %}
-                              {% comment %} <a href="" class="grey-text">
-                                    <h5>Outwear</h5>
-                              </a> {% endcomment %}
-                              <a href="{%url 'product' categoryItem.id%}">View</a>
+                                                            <div class="row  fadeIn justify-content-center">
                               <h5>
                                     <strong>
                                     <a href="" class="dark-grey-text">{{categoryItem.title}}</a>
                                     </strong>
                               </h5>
+                              <div style="padding-left:10px;">
                                <form action="{%url 'all_category_products' categoryItem.category.id %}" method="GET">
                               <button type="submit" class="badge purple mr-1">{{categoryItem.category}}</button>
                               {% comment %} <a class="badge purple mr-1" href="{%url 'all_category_products' product.category.id %}"></a> {% endcomment %}
                               </form>
-                              <h4 class="font-weight-bold blue-text">
-                                    <strong>${{categoryItem.price}}</strong>
-                              </h4>
-
+                                </div>
+                             </div>
+                              <div class="row  fadeIn justify-content-center">
+                              {% if not boolean %}
+                                    <td><form action="{%url 'create_item' categoryItem.id %}" method="POST">
+                                    {% csrf_token %}
+                                     <button class="btn btn-primary btn-sm" type="submit">Add to cart</button>
+                                    </form></td>
+                                    </form></td>
+                              {% else %} 
+                                    <td><form action="{%url 'update_item' categoryItem.id %}">
+                                    {% csrf_token %}
+                                     <button class="btn btn-primary btn-sm" type="submit">Go to cart</button>
+                                    </form></td>
+                                    </form></td>
+                              {% endif %}
+                              {% comment %} <a href="" class="grey-text">
+                                    <h5>Outwear</h5>
+                              </a> {% endcomment %}
+                              <div style="padding-top:20px;"><a href="{%url 'product' categoryItem.id%}">View</a></div>
                               </div>
+                              <h4 class="font-weight-bold blue-text">
+                                    <strong>INR {{categoryItem.price}}</strong>
+                              </h4>
+                            
                               <!--Card content-->
-
+                               </div>
                               </div>
                               <!--Card-->
                         </div>

@@ -26,8 +26,13 @@
 <div class="signup-content">
 <div class="signup-form">
 <h2 class="form-title">Sign up</h2>
+
 <form method="POST" class="register-form" id="register-form">
 {% csrf_token %}
+
+<input class="form-control" type="text" placeholder="Password =>atleast 1 upper case" readonly>
+<input class="form-control" type="text" placeholder="Password =>atleast one digit" readonly>
+<input class="form-control" type="text" placeholder="Password =>atleast 1 symbol" readonly>
 <div class="form-group">
   <label for="name"><i class="material-icons md-dark">account_box</i></label>
     {%render_field form.username  id="name" placeholder="Your Name" name="name" type="text" %}

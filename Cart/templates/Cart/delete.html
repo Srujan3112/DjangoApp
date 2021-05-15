@@ -4,12 +4,14 @@
 {% load widget_tweaks %}
 {% block content %}
  <div style="min-height: 200px;"></div></table>
-<p>Are you sure you want to delete {{item.product.title}}?</p>
+<div class="text-center">
+<h3><p>Are you sure you want to delete {{item.product.title}}?</p></h3>
 			<form action="{% url 'delete_item' item.product.id  %}" method="POST">
 				{% csrf_token %}
 				<a href="{% url 'products' %}">Cancel</a>
-
-				<input type="submit" name="Confirm">
+				<div></div>
+				<button type="submit" class="btn btn-danger"> Delete</button>
 			</form>
 	 <div style="min-height: 200px;"></div></table>
+</div>
 {% endblock content %}

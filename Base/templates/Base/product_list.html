@@ -66,30 +66,20 @@
 
           <!-- Links -->
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">All
-                <span class="sr-only">(current)</span>
+            <li class="nav-item">
+              <a class="nav-link" href={%url 'all_category_products' 2 %}>Fruits
+                <span class="sr-only"></span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Shirts</a>
+              <a class="nav-link" href={%url 'all_category_products' 2 %}>Vegetables</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Sport wears</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Outwears</a>
+              <a class="nav-link" href="#">Miscellaneous</a>
             </li>
 
           </ul>
           <!-- Links -->
-
-          <form class="form-inline">
-            <div class="md-form my-0">
-              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            </div>
-          </form>
-        </div>
         <!-- Collapsible content -->
 
       </nav>
@@ -120,32 +110,36 @@
                               <div class="card-body text-center">
                               <!--Category & Title-->
                               {% is_ordered request product as boolean %}
-                              {% if not boolean %}
-                                    <td><form action="{%url 'create_item' product.id %}" method="POST">
-                                    {% csrf_token %}
-                                    <input type="submit" value="Add to cart">
-                                    </form></td>
-                              {% else %} 
-                                    <td><form action="{%url 'update_item' product.id %}">
-                                    {% csrf_token %}
-                                    <input type="submit"  value="Go to cart">
-                                    </form></td>
-                              {% endif %}
-                              {% comment %} <a href="" class="grey-text">
-                                    <h5>Outwear</h5>
-                              </a> {% endcomment %}
-                              <a href="{%url 'product' product.id%}">View</a>
+                              
+                              <div class="row  fadeIn justify-content-center">
                               <h5>
                                     <strong>
                                     <a href="" class="dark-grey-text">{{product.title}}</a>
                                     </strong>
                               </h5>
+                              <div style="padding-left:10px;">
                               <form action="{%url 'all_category_products' product.category.id %}" method="GET">
                               <button type="submit" class="badge purple mr-1">{{product.category}}</button>
                               {% comment %} <a class="badge purple mr-1" href="{%url 'all_category_products' product.category.id %}"></a> {% endcomment %}
                               </form>
+                              </div>
+                              </div>
+                              <div class="row  fadeIn justify-content-center">
+                              {% if not boolean %}
+                                    <td><form action="{%url 'create_item' product.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-primary btn-sm">Add to cart</button>
+                                    </form></td>
+                              {% else %} 
+                                    <td><form action="{%url 'update_item' product.id %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-primary btn-sm">Go to cart</button>
+                                    </form></td>
+                              {% endif %}
+                                <div style="padding-top:20px;"><a href="{%url 'product' product.id%}">View</a></div>
+                              </div>
                               <h4 class="font-weight-bold blue-text">
-                                    <strong>${{product.price}}</strong>
+                                    <strong>INR {{product.price}}</strong>
                               </h4>
 
                               </div>
@@ -173,33 +167,39 @@
                               <div class="card-body text-center">
                               <!--Category & Title-->
                               {% is_ordered request product as boolean %}
-                              {% if not boolean %}
-                                    <td><form action="{%url 'create_item' product.id %}" method="POST">
-                                    {% csrf_token %}
-                                    <input type="submit" value="Add to cart">
-                                    </form></td>
-                              {% else %} 
-                                    <td><form action="{%url 'update_item' product.id %}">
-                                    {% csrf_token %}
-                                    <input type="submit"  value="Go to cart">
-                                    </form></td>
-                              {% endif %}
-                              {% comment %} <a href="" class="grey-text">
-                                    <h5>Outwear</h5>
-                              </a> {% endcomment %}
-                              <a href="{%url 'product' product.id%}">View</a>
+                              
+                              <div class="row  fadeIn justify-content-center">
                               <h5>
                                     <strong>
                                     <a href="" class="dark-grey-text">{{product.title}}</a>
                                     </strong>
                               </h5>
+                              <div style="padding-left:10px;">
                               <form action="{%url 'all_category_products' product.category.id %}" method="GET">
                               <button type="submit" class="badge purple mr-1">{{product.category}}</button>
                               {% comment %} <a class="badge purple mr-1" href="{%url 'all_category_products' product.category.id %}"></a> {% endcomment %}
                               </form>
-
+                              </div>
+                              </div>
+                              <div class="row  fadeIn justify-content-center">
+                              {% if not boolean %}
+                                    <td><form action="{%url 'create_item' product.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-primary btn-sm">Add to cart</button>
+                                    </form></td>
+                              {% else %} 
+                                    <td><form action="{%url 'update_item' product.id %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-primary btn-sm">Go to cart</button>
+                                    </form></td>
+                              {% endif %}
+                              {% comment %} <a href="" class="grey-text">
+                                    <h5>Outwear</h5>
+                              </a> {% endcomment %}
+                              <div style="padding-top:20px;"><a href="{%url 'product' product.id%}">View</a></div>
+                              </div>
                               <h4 class="font-weight-bold blue-text">
-                                    <strong>${{product.price}}</strong>
+                                    <strong>INR {{product.price}}</strong>
                               </h4>
 
                               </div>

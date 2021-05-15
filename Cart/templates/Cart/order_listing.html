@@ -90,7 +90,7 @@ $(document).ready(function() {
                         <aside class="col-sm-3">
                               <div class="info-aside">
                                     <div class="price-wrap">
-                                          <span class="price h5">${{order_item.order_item.price}} </span>	
+                                          <span class="price h5">INR {{order_item.order_item.price}} </span>	
                                           <!-- <del class="price-old"> $198</del> -->
                                     </div> <!-- info-price-detail // -->
                                     <!-- <p class="text-success">Free shipping</p> -->
@@ -109,6 +109,8 @@ $(document).ready(function() {
 
 {%empty%}
 <h3> No Items are present</h3>
+<table>
+ <div style="min-height: 180px;"></div></table>
 {% endfor %}
 		
 {% comment %}     
