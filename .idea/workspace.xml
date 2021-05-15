@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77a5559a-7b7a-445f-9d0b-c7006152d278" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Auth/static/Authforms/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/static/Authforms/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/static/Authforms/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/static/Authforms/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/templates/Auth/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/templates/Auth/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/templates/Auth/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/templates/Auth/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DjangoApp/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoApp/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/staticfiles/Authforms/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/staticfiles/Authforms/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,15 +46,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Base/static/Product_detail/font" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\sruja\Desktop\DjangoApp" />
       <recent name="C:\Users\sruja\Desktop\DjangoApp\Base\static\Product_detail\font" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sruja\Desktop\DjangoApp\Auth\static\Authforms\css" />
       <recent name="C:\Users\sruja\Desktop\DjangoApp\Auth\views" />
       <recent name="C:\Users\sruja\Desktop\DjangoApp\Auth\migrations\views" />
       <recent name="C:\Users\sruja\Desktop\DjangoApp\Base\templates\Base" />
