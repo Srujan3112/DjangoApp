@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 import django_heroku
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -44,6 +47,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'widget_tweaks',
     'django_filters',
+    'cloudinary',
 ]
 CRISPY_TEMPLATE_FORM = 'bootstrap4'
 MIDDLEWARE = [
@@ -137,5 +141,11 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'Cart/static'),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+CLOUDINARY_STORAGE={
+    'CLOUD_NAME':'dhrgsak7v',
+    'API_KEY':'373954628546245',
+    'API_SECRET':'rMF9UYGbit4RRYnA9PvbpzZY49k'
+}
 
 django_heroku.settings(locals())
