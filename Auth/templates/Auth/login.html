@@ -63,6 +63,9 @@
 <h2 class="form-title">Sign In</h2>
 <form method="POST" class="register-form" id="login-form">
 {% csrf_token %}
+<input class="form-control" type="text" placeholder="If the browser is just reloading" readonly>
+<input class="form-control" type="text" placeholder="Then Username/Password is" readonly>
+<input class="form-control" type="text" placeholder="Incorrect" readonly>
 <div class="form-group">
   <label for="your_name"><i class="material-icons md-dark">account_box</i></label>
    {%render_field form.username  id="your_name" placeholder="Your Name" name="your_name" type="text" %}
@@ -81,7 +84,7 @@
 <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" />
 </div>
 </form>
-<div class="social-login">
+{% comment %} <div class="social-login">
 <span class="social-label">Or login with</span>
   <div class="social-media-icons col-xs-12">
     <ul class="list-inline col-xs-12">
@@ -90,7 +93,7 @@
       <a href="#"><i class="fa fa-facebook-square fa-4x"></i></a>
     </ul>
   </div>
-</div>
+</div> {% endcomment %}
 </div>
 </div>
 </div>

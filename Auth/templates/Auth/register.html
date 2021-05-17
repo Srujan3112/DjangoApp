@@ -30,9 +30,11 @@
 <form method="POST" class="register-form" id="register-form">
 {% csrf_token %}
 
-<input class="form-control" type="text" placeholder="Password =>atleast 1 upper case" readonly>
+<input class="form-control" type="text" placeholder="Password=>atleast 1 upper case" readonly>
 <input class="form-control" type="text" placeholder="Password =>atleast one digit" readonly>
+<input class="form-control" type="text" placeholder="Length of password must be>=8" readonly>
 <input class="form-control" type="text" placeholder="Password =>atleast 1 symbol" readonly>
+<div></div>
 <div class="form-group">
   <label for="name"><i class="material-icons md-dark">account_box</i></label>
     {%render_field form.username  id="name" placeholder="Your Name" name="name" type="text" %}
@@ -50,10 +52,10 @@
 <label for="re-pass"><i class="material-icons md-dark">lock_outline</i></label>
 {%render_field form.password2 id="re_pass" placeholder="Repeat your password" name="re_pass" type="password" %}
 </div>
-<div class="form-group">
-<input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-<label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in <a href="#" class="term-service">Terms of service</a></label>
-</div>
+{% comment %} <div class="form-group"> {% endcomment %}
+{% comment %} <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" /> {% endcomment %}
+{% comment %} <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in <a href="#" class="term-service">Terms of service</a></label> {% endcomment %}
+{% comment %} </div> {% endcomment %}
 <div class="form-group form-button">
 <input type="submit" name="signup" id="signup" class="form-submit" value="Register" />
 </div>
