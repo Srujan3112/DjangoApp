@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'django_filters',
     'cloudinary',
+    'cloudinary_storage',
 ]
 CRISPY_TEMPLATE_FORM = 'bootstrap4'
 MIDDLEWARE = [
