@@ -144,9 +144,9 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 CLOUDINARY_STORAGE={
-    'CLOUD_NAME':'dhrgsak7v',
-    'API_KEY':'373954628546245',
-    'API_SECRET':'rMF9UYGbit4RRYnA9PvbpzZY49k'
+    'CLOUD_NAME':'',
+    'API_KEY':'',
+    'API_SECRET':''
 }
 
 django_heroku.settings(locals())
